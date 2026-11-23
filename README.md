@@ -1,4 +1,4 @@
-# HEN4DESKT — Webtoon Reader
+# HEN4DESKT — Doujin Reader
 
 A desktop image reader for manga, webtoons, and other image-based books. It provides continuous vertical scrolling, a local library and reading history, and an optional `gallery-dl`-powered search and download interface.
 
