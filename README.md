@@ -2,7 +2,13 @@
 
 A desktop image reader for manga, webtoons, and other image-based books. It provides continuous vertical scrolling, a local library and reading history, and an optional `gallery-dl`-powered search and download interface.
 
-> **Content notice:** Discover and Download can access sources that host adult material. Use the available site/rating filters, comply with the laws and terms that apply to you, and only download content you are authorized to access.
+> **Content notice:** Discover and Download can access sources that host adult material. Use the available site/rating filters, comply with the laws and terms that apply to you, and only download content you have permission to access.
+
+## Screenshots
+
+![Discover and download interface](./Screenshot%202026-11-23%20101214.png)
+
+![Download queue and manga sources](./Screenshot%202026-11-23%20101248.png)
 
 ## Features
 
@@ -10,7 +16,7 @@ A desktop image reader for manga, webtoons, and other image-based books. It prov
 - **Responsive rendering:** page decoding and resizing run in background workers; tall images are split into tiles to keep memory use manageable.
 - **Home screen:** browse reading history, scan a local library, continue reading, bookmark books, and view suggestions.
 - **Library tools:** search and filter books, group chapters, track progress, preview covers, and open folders in your file manager.
-- **Discover & Download (optional):** search supported sources, browse tag results, submit codes or URLs, inspect a download queue, and save searches. Cover thumbnails and site availability depend on the source and your `gallery-dl` setup.
+- **Discover & Download (optional):** search supported sources, browse tag results, submit codes or URLs, inspect a download queue, and save searches. Cover thumbnails and site availability depend on the installed `gallery-dl` version and extractor support.
 - **Reader customization:** multiple themes, high-DPI scaling on Windows, fullscreen and zen modes.
 
 ## Requirements
@@ -42,7 +48,7 @@ Open a folder or select image files from the app. You can also pass a folder or 
 python reader.py "/path/to/book"
 ```
 
-On Windows, use `py` in place of `python` if that is how Python is installed. On Linux, install your distribution's Tkinter package if importing `tkinter` fails (for example, `python3-tk` on Debian-based systems).
+On Windows, use `py` in place of `python` if that is how Python is installed. On Linux, install your distribution's Tkinter package if importing `tkinter` fails (for example, `python3-tk` on Debian/Ubuntu).
 
 ## Using the app
 
@@ -79,13 +85,13 @@ On Windows, use `py` in place of `python` if that is how Python is installed. On
 
 ## Discover & Download notes
 
-Discover & Download uses the installed `gallery-dl` extractors and supports four input modes: **Search**, **Codes**, **Tags**, and **URLs**. Available sources and capabilities depend on the installed `gallery-dl` version. Some sites may require a browser-exported cookies file and a matching user-agent, which can be configured from the settings button.
+Discover & Download uses the installed `gallery-dl` extractors and supports four input modes: **Search**, **Codes**, **Tags**, and **URLs**. Available sources and capabilities depend on the installed extractor version.
 
-Tag search offers a rating-filtered-sites option. Not every supported site has a configured rating filter; the app warns before using unfiltered sites. A rating filter is not a guarantee of content safety. Review results and source policies before downloading. The app does not bundle `gallery-dl` or provide credentials for third-party sites.
+Tag search offers a rating-filtered-sites option. Not every supported site has a configured rating filter; the app warns before using unfiltered sites. A rating filter is not a guarantee of content suitability, and site terms and local laws still apply.
 
 ## Settings and saved data
 
-The app stores preferences, reading progress, history, and bookmarks in `~/.webtoon_reader.json` (the current user's home directory). Download cover thumbnails are cached under `~/.webtoon_reader_covers/`. The selected download folder and its `gallery-dl` archive are configured in Discover & Download settings.
+The app stores preferences, reading progress, history, and bookmarks in `~/.webtoon_reader.json` (the current user's home directory). Download cover thumbnails are cached under `~/.webtoon_reader_cache/`.
 
 ## Supported image formats
 
@@ -100,4 +106,4 @@ PNG, JPG/JPEG, WebP, BMP, GIF, TIF, and TIFF.
 
 ## License
 
-No license file was supplied with the project. Unless the repository includes a license, all rights remain with the copyright holder; contact the project owner for permission to reuse or redistribute it.
+No license file was supplied with the project. Unless the repository includes a license, all rights remain with the copyright holder; contact the project owner for permission to reuse or redistribute the project.
